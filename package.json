@@ -1,0 +1,20 @@
+{
+  "name": "car-rent-website",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fahim200425/car_rent_web.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fahim200425/car_rent_web/issues"
+  },
+  "homepage": "https://github.com/fahim200425/car_rent_web#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

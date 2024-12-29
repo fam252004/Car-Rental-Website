@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Resetting default styles and setting global properties */
+* {
+    font-family: "Poppins", sans-serif;  /* Setting default font */
+    margin: 0;                           /* Removing default margin */
+    padding: 0;                          /* Removing default padding */
+    box-sizing: border-box;              /* Ensuring box model includes borders and padding in element's total width and height */
+    scroll-padding-top: 2rem;            /* Adding padding when scrolling to an anchor */
+    scroll-behavior: smooth;             /* Smooth scrolling behavior */
+    list-style: none;                    /* Removing default list styles */
+    text-decoration: none;               /* Removing default text decoration */
+}
+
+/* Defining custom CSS variables */
+:root {
+    --main-color: #fe5b3d;               /* Main color variable */
+    --second-color: #ffac38;             /* Secondary color variable */
+    --text-color: #444;                  /* Text color variable */
+    --gradient: linear-gradient(#fe5b3d, #ffac38); /* Gradient variable */
+}
+
+/* Customizing scrollbar appearance */
+html::-webkit-scrollbar {
+    width: 0.5rem;                       /* Width of the scrollbar */
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;             /* Background color of the scrollbar track */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);       /* Background color of the scrollbar thumb using main color variable */
+    border-radius: 5rem;                 /* Border radius of the scrollbar thumb */
+}
+
+/* Styling sections with padding */
+section {
+    padding: 50px 100px;                 /* Padding for sections */
+}
+
+/* Styling the fixed header */
+header {
+    position: fixed;                     /* Fixed position to stay at the top */
+    width: 100%;                         /* Full width of the viewport */
+    right: 0;                            /* Align to the right edge */
+    z-index: 1000;                       /* Higher stacking order */
+    display: flex;                       /* Flex container */
+    align-items: center;                 /* Center items vertically */
+    justify-content: space-between;      /* Space between items horizontally */
+    background: #eeeff1;                 /* Background color */
+    padding: 15px 100px;                 /* Padding around content */
+}
+
+/* Styling the logo inside header */
+.logo img {
+    width: 30%;                          /* Width of the logo image */
+}
+
+/* Styling the navbar */
+.navbar {
+    display: flex;                       /* Flex container for navbar items */
+}
+
+.navbar li {
+    position: relative;                  /* Positioning navbar items relative */
+}
+
+/* Styling links inside navbar */
+.navbar a {
+    font-size: 1rem;                     /* Font size of navbar links */
+    padding: 10px 10px;                  /* Padding around navbar links */
+    color: var(--text-color);            /* Text color using text color variable */
+    font-weight: 500;                    /* Font weight of navbar links */
+}
+
+/* Styling the hover effect for navbar links */
+.navbar a::after {
+    content: " ";                        /* Empty content for pseudo-element */
+    width: 0;                            /* Initial width of pseudo-element */
+    height: 3px;                         /* Height of pseudo-element */
+    background: var(--gradient);         /* Background gradient for pseudo-element */
+    position: absolute;                  /* Positioning pseudo-element */
+    bottom: -4px;                        /* Positioning pseudo-element at the bottom */
+    left: 0;                             /* Positioning pseudo-element to the left */
+    transition: 0.5s;                    /* Smooth transition for pseudo-element */
+}
+
+.navbar a:hover::after {
+    width: 100%;                         /* Full width on hover for pseudo-element */
+}
+
+/* Styling the menu icon */
+#menuicon {
+    font-size: 24px;                     /* Font size of menu icon */
+    cursor: pointer;                     /* Cursor style for interaction */
+    z-index: 10001;                      /* Higher stacking order for icon */
+    display: none;                       /* Initially hidden */
+}
+
+/* Styling buttons inside .btn class */
+.btn a {
+    padding: 10px 20px;                  /* Padding around button text */
+    color: var(--text-color);            /* Text color using text color variable */
+    font-weight: 500;                    /* Font weight of button text */
+}
+
+/* Styling sign-in button */
+.btn #signin {
+    background: #474fa0;                 /* Background color of sign-in button */
+    color: #fff;                         /* Text color of sign-in button */
+    border-radius: 18px;                 /* Border radius of sign-in button */
+}
+
+.btn #signin:hover {
+    background: var(--main-color);       /* Hover background color using main color variable */
+}
+
+/* Styling the home section */
+.home {
+    width: 100%;                         /* Full width */
+    min-height: 100vh;                   /* Minimum height of viewport height */
+    position: relative;                  /* Relative positioning */
+    background: url(pics/bmw.jpg) no-repeat center right; /* Background image and position */
+    background-size: 400px;              /* Background size */
+    display: grid;                       /* Grid display for layout */
+    align-items: center;                 /* Center alignment for grid items */
+    grid-template-columns: repeat(2, 1fr); /* Grid columns layout */
+}
+
+/* Styling text elements inside .text class */
+.text h1 {
+    font-size: 3.5rem;                   /* Font size of heading */
+    letter-spacing: 2px;                 /* Letter spacing of heading */
+}
+
+.text span {
+    color: var(--main-color);            /* Text color using main color variable */
+}
+
+.text p {
+    margin: 0.5rem 0 1rem;               /* Margin of paragraphs */
+}
+
+/* Styling app store links */
+.appstore {
+    display: flex;                       /* Flex container for app store images */
+}
+
+.appstore img {
+    width: 100px;                        /* Width of app store images */
+    margin-right: 1rem;                  /* Margin between app store images */
+    cursor: pointer;                     /* Cursor style for interaction */
+}
+
+/* Styling forms */
+.formc form {
+    display: flex;                       /* Flex container for form */
+    flex-wrap: wrap;                     /* Wrapping items in form */
+    align-items: center;                 /* Center alignment for form items */
+    gap: 1rem;                           /* Gap between form items */
+    position: absolute;                  /* Absolute positioning */
+    bottom: 1rem;                        /* Positioning form from bottom */
+    left: 100px;                         /* Positioning form from left */
+    background: #fff;                    /* Background color of form */
+    padding: 20px;                       /* Padding around form */
+    border-radius: 0.5rem;               /* Border radius of form */
+}
+
+/* Styling input fields */
+.input {
+    flex: 1 1 7rem;                      /* Flex properties for input fields */
+    display: flex;                       /* Flex container for input fields */
+    flex-direction: column;              /* Column direction for input fields */
+}
+
+.input span {
+    font-weight: 500;                    /* Font weight of span elements */
+}
+
+.input input {
+    padding: 7px;                        /* Padding inside input fields */
+    outline: none;                       /* Removing default outline */
+    border: none;                        /* Removing default border */
+    background: #eeeff1;                 /* Background color of input fields */
+    border-radius: 0.5rem;               /* Border radius of input fields */
+    font-size: 1rem;                     /* Font size of input fields */
+}
+
+/* Styling buttons inside form */
+.formc form .btn {
+    flex: 1 1 7rem;                      /* Flex properties for buttons */
+    padding: 10px 34px;                  /* Padding around button text */
+    border: none;                        /* Removing default border */
+    border-radius: 0.5rem;               /* Border radius of buttons */
+    background: #474fa0;                 /* Background color of buttons */
+    color: #fff;                         /* Text color of buttons */
+    font-size: 1rem;                     /* Font size of buttons */
+    font-weight: 500;                    /* Font weight of buttons */
+}
+
+.formc form .btn:hover {
+    background: var(--main-color);       /* Hover background color using main color variable */
+}
+
+/* Styling heading section */
+.heading {
+    text-align: center;                  /* Center alignment for heading */
+}
+
+.heading span {
+    text-transform: uppercase;           /* Uppercase transformation for span */
+    font-weight: 500;                    /* Font weight of span */
+}
+
+.heading h1 {
+    font-size: 2rem;                     /* Font size of heading */
+}
+
+/* Styling drive section */
+.drivec {
+   display: grid;                       /* Grid display for drive section */
+    align-items: center;                 /* Center alignment for drive section */
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto)); /* Grid columns layout */
+    gap: 1rem;                           /* Gap between grid items */
+    margin-top: 2rem;                    /* Margin from top */
+}
+
+.drivec .box {
+    text-align: center;                  /* Center alignment for box */
+    padding: 20px;                       /* Padding around box */
+}
+
+.drivec .box .bx {
+    font-size: 34px;                     /* Font size of bx class */
+    padding: 10px;                       /* Padding around bx class */
+    background: #eeeff1;                 /* Background color of bx class */
+    border-radius: 0.5rem;               /* Border radius of bx class */
+    color: var(--main-color);            /* Text color using main color variable */
+}
+
+.drivec .box h2 {
+    font-size: 1.5rem;                   /* Font size of h2 inside box */
+    font-weight: 500;                    /* Font weight of h2 inside box */
+    margin: 1.5rem 0 0.5rem;             /* Margin around h2 inside box */
+}
+
+.drivec .box .bx:hover {
+    background: var(--gradient);         /* Hover background using gradient variable */
+    color: #fff;                         /* Text color on hover */
+}
+
+/* Styling services section */
+.servicess {
+    display: grid;                       /* Grid display for services section */
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto)); /* Grid columns layout */
+    gap: 1rem;                           /* Gap between grid items */
+    margin-top: 2rem;                    /* Margin from top */
+}
+
+.servicess .box {
+    padding: 10px;                       /* Padding around box */
+    border-radius: 1rem;                 /* Border radius of box */
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.1); /* Box shadow for box */
+}
+
+.servicess .box .boximg {
+    width: 100%;                         /* Width of box image */
+    height: 100px;                       /* Height of box image */
+}
+
+.servicess .box .boximg img {
+    width: 90%;                          /* Width of image inside box */
+    height: 100%;                        /* Height of image inside box */
+    border-radius: 1rem;                 /* Border radius of image inside box */
+    object-fit: cover;                   /* Cover object-fit for image inside box */
+    object-position: center;             /* Center object-position for image inside box */
+}
+
+.servicess .box p {
+    padding: 0 10px;                     /* Padding around paragraph */
+    border: 1px solid var(--text-color); /* Border with text color */
+    width: 58px;                         /* Width of paragraph */
+    border-radius: 0.5rem;               /* Border radius of paragraph */
+    margin: 1rem 0 1rem;                 /* Margin around paragraph */
+}
+
+.servicess .box h3 {
+    font-weight: 500;                    /* Font weight of h3 */
+}
+
+.servicess .box h2 {
+    font-size: 1rem;                     /* Font size of h2 */
+}
+
+.servicess .box .btn {
+    display: flex;                       /* Flex display for button */
+    justify-content: center;             /* Center justification for button */
+    background: #474fa0;                 /* Background color of button */
+    color: #fff;                         /* Text color of button */
+    padding: 10px;                       /* Padding around button */
+    border-radius: 0.5rem;               /* Border radius of button */
+}
+
+.servicess .box .btn:hover {
+    background: var(--main-color);       /* Hover background using main color variable */
+}
+
+/* Styling about section */
+.aboutc {
+    display: grid;                       /* Grid display for about section */
+    grid-template-columns: repeat(2, 1fr); /* Grid columns layout */
+    margin-top: 2rem;                    /* Margin from top */
+    align-items: center;                 /* Center alignment for items */
+    gap: 1rem;                           /* Gap between grid items */
+}
+
+.aboutimg img {
+    width: 100%;                         /* Width of image inside about */
+}
+
+.aboutt span {
+    font-weight: 500;                    /* Font weight of span inside about */
+    color: var(--main-color);            /* Text color using main color variable */
+    text-transform: uppercase;           /* Uppercase transformation */
+}
+
+.aboutt p {
+    margin: 0.5rem 0 1.5rem;             /* Margin around paragraph inside about */
+}
+
+.aboutt .btn {
+    padding: 10px 20px;                  /* Padding around button inside about */
+    background: #474fa0;                 /* Background color of button inside about */
+    color: #fff;                         /* Text color of button inside about */
+    border-radius: 0.5rem;               /* Border radius of button inside about */
+}
+
+.aboutt .btn:hover {
+    background: var(--main-color);       /* Hover background using main color variable */
+}
+
+/* Styling reviews section */
+.reviewsc {
+    display: grid;                       /* Grid display for reviews section */
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto)); /* Grid columns layout */
+    gap: 1rem;                           /* Gap between grid items */
+    margin-top: 2rem;                    /* Margin from top */
+}
+
+.revimg {
+    width: 70px;                         /* Width of review image */
+    height: 70px;                        /* Height of review image */
+}
+
+.revimg img {
+    height: 100%;                        /* Height of image inside review */
+    width: 100%;                         /* Width of image inside review */
+    border-radius: 50%;                  /* Border radius of image inside review */
+    object-fit: cover;                   /* Cover object-fit for image inside review */
+    object-position: center;             /* Center object-position for image inside review */
+    border: 2px solid var(--second-color); /* Border with secondary color */
+}
+
+.reviewsc .box {
+    display: flex;                       /* Flex display for box inside reviews */
+    flex-direction: column;              /* Column direction for box inside reviews */
+    align-items: center;                 /* Center alignment for items inside box */
+    text-align: center;                  /* Center alignment for text inside box */
+    padding: 20px;                       /* Padding around box */
+    box-shadow: 1px 4px 40px rgba(0, 0, 0, 0.1); /* Box shadow for box */
+    border-radius: 0.5rem;               /* Border radius of box */
+}
+
+.reviewsc .box h2 {
+    font-size: 1rem;                     /* Font size of h2 inside box */
+    font-weight: 600;                    /* Font weight of h2 inside box */
+    margin: 0.5rem 0 0.5rem;             /* Margin around h2 inside box */
+}
+
+.reviewsc .box p {
+    font-style: italic;                  /* Italic style for paragraph inside box */
+}
+
+.reviewsc .box .stars .bx {
+    color: var(--main-color);            /* Text color using main color variable */
+}
+
+/* Styling news section */
+.news {
+    display: flex;                       /* Flex display for news section */
+    flex-direction: column;              /* Column direction for news section */
+    align-items: center;                 /* Center alignment for items inside news section */
+    padding: 20px;                       /* Padding around news section */
+}
+
+.news h2 {
+    margin-top: 1rem;                    /* Margin from top for h2 inside news */
+    background: #fff;                    /* Background color of h2 inside news */
+    border-radius: 0.5rem;               /* Border radius of h2 inside news */
+    padding: 4px 8px;                    /* Padding around h2 inside news */
+    width: 350px;                        /* Width of h2 inside news */
+    display: flex;                       /* Flex display for h2 inside news */
+    justify-content: space-between;      /* Space between items inside h2 inside news */
+}
+
+.news .box input {
+    border: none;                        /* Removing default border for input */
+    outline: none;                       /* Removing default outline for input */
+}
+
+.news .box .btn {
+    background: #474fa0;                 /* Background color of button inside news */
+    color: #fff;                         /* Text color of button inside news */
+    padding: 8px 20px;                   /* Padding around button inside news */
+    border-radius: 0.5rem;               /* Border radius of button inside news */
+}
+.news .box .btn:hover {
+    background: var(--main-color);       /* Hover background color using main color variable */
+}
+
+/* Styling footer */
+.copy {
+    padding: 20px;                       /* Padding around footer */
+    display: flex;                       /* Flex display for footer */
+    justify-content: space-between;      /* Space between items inside footer */
+    align-items: center;                 /* Center alignment for items inside footer */
+}
+
+.social a {
+    color: #444;                         /* Text color of social links */
+    padding: 10px;                       /* Padding around social links */
+    font-size: 21px;                     /* Font size of social links */
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1037px) {
+    header {
+        padding: 18px 40px;              /* Adjusted padding for 991 header */
+    }
+    section {
+        padding: 50px 40px;              /* Adjusted padding for sections */
+    }
+}
+
+@media (max-width: 917px) {
+    header {
+        padding: 18px 20px;              /* Adjusted padding for 991 header */
+    }
+    section {
+        padding: 50px 20px;              /* Adjusted padding for sections */
+    }
+}
+
+@media (max-width: 881px) {
+    .home {
+        background-position: left;       /* Adjusted background position for home section */
+    }
+    .formc form {
+        bottom: 0.2rem;                  /* Adjusted position for form */
+        left: 40px;                      /* Adjusted position for form */
+    }
+
+    header {
+        padding: 18px 10px;              /* Adjusted padding for 991 header */
+    }
+    section {
+        padding: 50px 10px;              /* Adjusted padding for sections */
+    }
+}
+
+@media (max-width: 851px) {
+    header {
+        padding: 18px 5px;              /* Adjusted padding for 991 header */
+    }
+    section {
+        padding: 50px 5px;              /* Adjusted padding for sections */
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 11px 40px;              /* Adjusted padding for header */
+    }
+    #menuicon {
+        display: initial;                /* Displaying menu icon */
+    }
+    .signup {
+        display: none;                   /* Hiding signup section */
+    }
+    .text h1 {
+        font-size: 2.5rem;               /* Adjusted font size for text h1 */
+    }
+    .appstore img {
+        width: 90px;                     /* Adjusted width for app store images */
+    }
+    .formc form {
+        left: 10px;                      /* Adjusted position for form */
+    }
+    .aboutc {
+        grid-template-columns: 1fr;      /* Adjusted grid columns layout for about section */
+    }
+}
+
+@media (max-width: 600px) {
+    .home {
+        background-size: 250px;          /* Adjusted background size for home section */
+    }
+    .servicess, .drivec {
+        grid-template-columns: 1fr;      /* Adjusted grid columns layout for services and drive sections */
+    }
+    .servicess .box, .drivec .box {
+        text-align: center;              /* Adjusted text alignment for boxes */
+    }
+    .aboutc {
+        grid-template-columns: 1fr;      /* Adjusted grid columns layout for about section */
+    }
+    .reviewsc, .news {
+        grid-template-columns: 1fr;      /* Adjusted grid columns layout for reviews and news sections */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px 20px;               /* Adjusted padding for header */
+    }
+    .text h1 {
+        font-size: 2rem;                 /* Adjusted font size for text h1 */
+    }
+    .aboutc, .servicess, .drivec, .reviewsc, .news {
+        grid-template-columns: 1fr;      /* Adjusted grid columns layout for various sections */
+    }
+    .formc form {
+        padding: 15px;                   /* Adjusted padding for form */
+    }
+    .news h2 {
+        width: 290px;                    /* Adjusted width for h2 inside news */
+    }
+}
+
+@media (max-width: 400px) {
+    .appstore img {
+        width: 80px;                     /* Adjusted width for app store images */
+    }
+    .news h2 {
+        width: 250px;                    /* Adjusted width for h2 inside news */
+    }
+    .heading h1 {
+        font-size: 1.5rem;               /* Adjusted font size for heading h1 */
+    }
+}
